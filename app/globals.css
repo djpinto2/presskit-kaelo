@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Barlow:wght@300;400;500;600;700&family=Oswald:wght@400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --black: #1a1a1a;
-  --blood: #c41e3a;
-  --ash: #808080;
-  --coal: #2a2a2a;
-  --line: #e0e0e0;
+  --black: #0a0a0b;
+  --coal: #131315;
+  --panel: #161617;
+  --bone: #ece7df;
+  --ash: #8f8a83;
+  --steel: #5c5954;
+  --blood: #c8362a;
+  --line: rgba(236, 231, 223, 0.14);
+  --line2: rgba(236, 231, 223, 0.07);
 }
 
 * {
@@ -16,14 +22,84 @@
   box-sizing: border-box;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  width: 100%;
-  background-color: var(--black);
-  color: var(--line);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: var(--black);
+  color: var(--bone);
+  font-family: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16.5px;
+  line-height: 1.6;
+  font-weight: 300;
+  overflow-x: hidden;
+  position: relative;
+}
+
+::selection {
+  background: var(--blood);
+  color: var(--bone);
+}
+
+/* Background grunge effect */
+body {
+  background:
+    radial-gradient(1100px 800px at 72% -10%, rgba(70, 68, 64, 0.35), transparent 60%),
+    radial-gradient(900px 700px at 8% 20%, rgba(40, 39, 37, 0.5), transparent 55%),
+    radial-gradient(1200px 900px at 50% 120%, rgba(60, 20, 16, 0.22), transparent 60%),
+    linear-gradient(180deg, #0c0c0d 0%, #0a0a0b 50%, #08080a 100%);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Links */
+a {
+  color: var(--blood);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff5a50;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--blood);
+  color: var(--bone);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  background: #ff5a50;
+  transform: translateY(-2px);
+}
+
+/* Containers */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    padding: 0 24px;
+  }
+
+  body {
+    font-size: 15px;
+  }
 }
