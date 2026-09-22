@@ -1,6 +1,24 @@
 'use client';
 
 export default function Music() {
+  const musicPlatforms = [
+    { 
+      name: 'Spotify', 
+      url: 'https://open.spotify.com/artist/KAELO_SPOTIFY_ID',
+      icon: '🎵'
+    },
+    { 
+      name: 'SoundCloud', 
+      url: 'https://soundcloud.com/kaelo',
+      icon: '☁️'
+    },
+    { 
+      name: 'Apple Music', 
+      url: 'https://music.apple.com/artist/kaelo',
+      icon: '🎧'
+    },
+  ];
+
   return (
     <section id="music">
       <div className="wrap">
@@ -10,79 +28,55 @@ export default function Music() {
         </h2>
 
         <div style={{ display: 'grid', gap: '40px' }}>
-          {/* Spotify Embed */}
+          {/* Platform Links */}
           <div style={{
-            borderRadius: '8px',
-            overflow: 'hidden',
-            minHeight: '352px',
-            backgroundColor: 'var(--panel)',
-            border: '1px solid var(--line)',
-          }}>
-            <iframe
-              src="https://open.spotify.com/embed/playlist/KAELO?utm_source=generator"
-              width="100%"
-              height="352"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              style={{ border: 'none', backgroundColor: 'var(--panel)' }}
-            />
-          </div>
-
-          {/* SoundCloud Embed */}
-          <div style={{
-            borderRadius: '8px',
-            overflow: 'hidden',
-            minHeight: '166px',
-            backgroundColor: 'var(--panel)',
-            border: '1px solid var(--line)',
-          }}>
-            <iframe
-              width="100%"
-              height="166"
-              scrolling="no"
-              frameBorder="no"
-              allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/KAELO"
-              style={{ backgroundColor: 'var(--panel)' }}
-            />
-          </div>
-
-          {/* External Links */}
-          <div style={{
-            display: 'flex',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: '16px',
-            flexWrap: 'wrap',
           }}>
-            {[
-              { name: 'Spotify', url: 'https://spotify.com' },
-              { name: 'SoundCloud', url: 'https://soundcloud.com' },
-              { name: 'Apple Music', url: 'https://music.apple.com' },
-            ].map((platform) => (
+            {musicPlatforms.map((platform) => (
               <a
                 key={platform.name}
                 href={platform.url}
                 target="_blank"
+                rel="noopener noreferrer"
                 style={{
-                  padding: '12px 20px',
-                  border: '1px solid var(--line)',
-                  color: 'var(--ash)',
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: '11px',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.2em',
+                  padding: '20px',
+                  border: '2px solid var(--line)',
+                  borderRadius: '8px',
+                  color: 'var(--txt)',
+                  textDecoration: 'none',
                   transition: 'all 0.3s ease',
+                  textAlign: 'center',
+                  fontWeight: '600',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  fontSize: '16px',
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--blood)';
-                  e.currentTarget.style.color = 'var(--blood)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--line)';
-                  e.currentTarget.style.color = 'var(--ash)';
-                }}
+                className="hover:border-[var(--blood)] hover:text-[var(--blood)] hover:bg-[var(--blood)]/5"
               >
-                {platform.name} →
+                <span>{platform.icon}</span>
+                {platform.name}
               </a>
             ))}
+          </div>
+
+          {/* Description */}
+          <div style={{
+            padding: '24px',
+            backgroundColor: 'var(--panel)',
+            borderRadius: '8px',
+            border: '1px solid var(--line)',
+            color: 'var(--txt-2)',
+            fontSize: '14px',
+            lineHeight: '1.6',
+          }}>
+            <p>
+              Escucha mis últimos sets y producciones en tus plataformas favoritas. 
+              Disponible en Spotify, SoundCloud, Apple Music y más.
+            </p>
           </div>
         </div>
       </div>
