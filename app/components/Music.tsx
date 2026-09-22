@@ -4,12 +4,12 @@ export default function Music() {
   const musicPlatforms = [
     { 
       name: 'Spotify', 
-      url: 'https://open.spotify.com/artist/KAELO_SPOTIFY_ID',
+      url: 'https://open.spotify.com/intl-es/artist/3ld4y01CjXQOIUjWVUdBQd?si=iFeBcAaISJai9AqMx5jd3Q',
       icon: '🎵'
     },
     { 
       name: 'SoundCloud', 
-      url: 'https://soundcloud.com/kaelo',
+      url: 'https://soundcloud.com/segundo-pinto-887266750',
       icon: '☁️'
     },
     { 
