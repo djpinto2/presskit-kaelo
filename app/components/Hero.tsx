@@ -1,87 +1,227 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-
 export default function Hero() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
   return (
-    <section id="home" className="hero relative min-h-screen w-full overflow-hidden bg-[var(--bg)] flex items-center justify-center">
+    <header id="top" style={{
+      position: 'relative',
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingTop: '140px',
+      paddingBottom: '90px',
+      overflow: 'hidden',
+    }}>
       {/* Video Background */}
       <video
         autoPlay
         muted
         loop
-        className="absolute inset-0 w-full h-full object-cover opacity-30"
+        playsInline
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          opacity: 0.6,
+          zIndex: 0,
+        }}
       >
-        <source src="/media/bg-video (2).mp4" type="video/mp4" />
+        <source src="/path-to-video.mp4" type="video/mp4" />
       </video>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--bg)]/50 to-[var(--bg)]" />
+      {/* Overlay */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'radial-gradient(circle at center, rgba(10, 10, 11, 0.3), rgba(10, 10, 11, 0.7))',
+        zIndex: 1,
+      }} />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="mb-8">
-          <span className="inline-block px-4 py-2 bg-[var(--gold-2)]/20 border border-[var(--gold-2)] text-[var(--gold-2)] rounded-full text-sm font-semibold">
-            🎧 Professional DJ & Music Producer
-          </span>
+      <div style={{
+        position: 'relative',
+        zIndex: 2,
+        textAlign: 'center',
+        maxWidth: '900px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '32px',
+      }}>
+        {/* Eyebrow */}
+        <div style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: '12px',
+          textTransform: 'uppercase',
+          letterSpacing: '0.42em',
+          color: 'var(--ash)',
+        }}>
+          ABUNDANCE presents — Official Press Kit
         </div>
 
-        <h1 className="text-6xl md:text-7xl font-bold mb-6">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--gold-2)] via-pink-500 to-purple-500">
-            KAELO
-          </span>
-        </h1>
+        {/* Logo */}
+        <div style={{
+          fontSize: 'clamp(64px, 15vw, 190px)',
+          fontFamily: "'Anton', sans-serif",
+          textTransform: 'uppercase',
+          letterSpacing: '0.02em',
+          fontWeight: 400,
+          lineHeight: 1,
+        }}>
+          KAELO
+        </div>
 
-        <p className="text-xl md:text-2xl text-[var(--txt-2)] mb-4">
-          House • Tech House • Afro Tech
+        {/* Tagline */}
+        <div style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: '14px',
+          textTransform: 'uppercase',
+          letterSpacing: '0.42em',
+          color: 'var(--ash)',
+        }}>
+          From <span style={{ color: 'var(--blood)' }}>Sunset</span> to <span style={{ color: 'var(--blood)' }}>Sunrise</span>
+        </div>
+
+        {/* Subtitle */}
+        <p style={{
+          fontSize: '16.5px',
+          lineHeight: 1.6,
+          color: 'var(--ash)',
+          maxWidth: '600px',
+          marginTop: '16px',
+        }}>
+          Argentine DJ | House · Tech House · Afro Tech<br/>
+          13+ years shaping dancefloors across Buenos Aires
         </p>
 
-        <p className="text-lg text-[var(--txt-3)] max-w-2xl mx-auto mb-12">
-          13+ years of experience performing at the most prestigious venues in Buenos Aires. Specialized in creating immersive electronic music experiences with cutting-edge sound design and energy.
-        </p>
+        {/* Genre Pills */}
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '12px',
+          justifyContent: 'center',
+          marginTop: '16px',
+        }}>
+          {['House', 'Tech House', 'Afro Tech'].map((genre) => (
+            <span
+              key={genre}
+              style={{
+                fontSize: '12px',
+                padding: '8px 16px',
+                border: '1px solid var(--blood)',
+                color: 'var(--blood)',
+                fontFamily: "'Space Mono', monospace",
+                textTransform: 'uppercase',
+                letterSpacing: '0.2em',
+              }}
+            >
+              {genre}
+            </span>
+          ))}
+        </div>
 
-        <div className="flex gap-4 flex-wrap justify-center">
-          <a 
-            href="#music" 
-            className="px-8 py-4 bg-[var(--gold-2)] text-[var(--bg)] font-bold rounded-lg hover:bg-opacity-90 transition transform hover:scale-105"
-          >
-            Listen on Platforms
+        {/* CTA Buttons */}
+        <div style={{
+          display: 'flex',
+          gap: '12px',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          marginTop: '32px',
+        }}>
+          <a href="mailto:kaelo.ar@gmail.com" style={{
+            background: 'var(--blood)',
+            color: 'var(--bone)',
+            padding: '14px 28px',
+            fontFamily: "'Space Mono', monospace",
+            fontSize: '12px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.42em',
+            fontWeight: 700,
+            transition: 'all 0.3s ease',
+            display: 'inline-block',
+          }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'none'}>
+            Book KAELO
           </a>
-          <a 
-            href="#contact" 
-            className="px-8 py-4 border-2 border-[var(--gold-2)] text-[var(--gold-2)] font-bold rounded-lg hover:bg-[var(--gold-2)]/10 transition"
-          >
-            Book Performance
+          <a href="https://www.spotify.com" target="_blank" style={{
+            background: 'transparent',
+            color: 'var(--bone)',
+            border: '1px solid var(--line)',
+            padding: '14px 28px',
+            fontFamily: "'Space Mono', monospace",
+            fontSize: '12px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.42em',
+            fontWeight: 700,
+            transition: 'all 0.3s ease',
+            display: 'inline-block',
+          }} onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = 'var(--blood)';
+            e.currentTarget.style.color = 'var(--blood)';
+            e.currentTarget.style.transform = 'translateY(-2px)';
+          }} onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = 'var(--line)';
+            e.currentTarget.style.color = 'var(--bone)';
+            e.currentTarget.style.transform = 'none';
+          }}>
+            Listen
           </a>
         </div>
 
-        <div className="mt-16 flex gap-6 justify-center">
-          <a href="https://instagram.com/kaelo.ar" target="_blank" rel="noopener" className="text-[var(--gold-2)] hover:text-pink-500 transition text-lg">
-            Instagram
-          </a>
-          <a href="https://spotify.com" target="_blank" rel="noopener" className="text-[var(--gold-2)] hover:text-green-500 transition text-lg">
-            Spotify
-          </a>
-          <a href="https://soundcloud.com" target="_blank" rel="noopener" className="text-[var(--gold-2)] hover:text-orange-500 transition text-lg">
-            SoundCloud
-          </a>
+        {/* Socials */}
+        <div style={{
+          display: 'flex',
+          gap: '24px',
+          marginTop: '32px',
+          fontFamily: "'Space Mono', monospace",
+          fontSize: '11px',
+          textTransform: 'uppercase',
+        }}>
+          <a href="https://instagram.com/kaelo.ar" target="_blank" style={{ color: 'var(--ash)' }}>Instagram</a>
+          <a href="https://spotify.com" target="_blank" style={{ color: 'var(--ash)' }}>Spotify</a>
+          <a href="https://soundcloud.com" target="_blank" style={{ color: 'var(--ash)' }}>SoundCloud</a>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="animate-bounce text-[var(--gold-2)]">↓</div>
+      {/* Scroll Hint */}
+      <div style={{
+        position: 'absolute',
+        bottom: '32px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 2,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '8px',
+        animation: 'bounce 2s infinite',
+      }}>
+        <p style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: '10px',
+          textTransform: 'uppercase',
+          letterSpacing: '0.42em',
+          color: 'var(--ash)',
+        }}>Scroll</p>
+        <div style={{
+          width: '1px',
+          height: '32px',
+          background: 'linear-gradient(180deg, var(--blood), transparent)',
+          animation: 'slide 1.5s infinite',
+        }} />
       </div>
-    </section>
+
+      <style jsx>{`
+        @keyframes bounce {
+          0%, 100% { transform: translateX(-50%) translateY(0); }
+          50% { transform: translateX(-50%) translateY(8px); }
+        }
+        @keyframes slide {
+          0% { opacity: 1; }
+          100% { opacity: 0; transform: translateY(32px); }
+        }
+      `}</style>
+    </header>
   );
 }

@@ -1,38 +1,73 @@
+'use client';
+
 export default function Footer() {
   return (
-    <footer className="footer bg-[var(--bg-2)] border-t border-[var(--line)] py-12 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          <div>
-            <h3 className="text-lg font-bold text-[var(--gold-2)] mb-4">KAELO</h3>
-            <p className="text-[var(--txt-3)]">Professional DJ | House • Tech House • Afro Tech</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-bold text-[var(--txt-1)] mb-4">Navigation</h3>
-            <div className="space-y-2">
-              <a href="#home" className="text-[var(--txt-3)] hover:text-[var(--gold-2)] transition block">Home</a>
-              <a href="#music" className="text-[var(--txt-3)] hover:text-[var(--gold-2)] transition block">Music</a>
-              <a href="#reels" className="text-[var(--txt-3)] hover:text-[var(--gold-2)] transition block">Performances</a>
-              <a href="#contact" className="text-[var(--txt-3)] hover:text-[var(--gold-2)] transition block">Booking</a>
-            </div>
-          </div>
-          <div>
-            <h3 className="text-lg font-bold text-[var(--txt-1)] mb-4">Social</h3>
-            <div className="space-y-2">
-              <a href="https://instagram.com/kaelo.ar" target="_blank" rel="noopener" className="text-[var(--txt-3)] hover:text-pink-500 transition block">Instagram</a>
-              <a href="https://soundcloud.com" target="_blank" rel="noopener" className="text-[var(--txt-3)] hover:text-orange-500 transition block">SoundCloud</a>
-              <a href="https://spotify.com" target="_blank" rel="noopener" className="text-[var(--txt-3)] hover:text-green-500 transition block">Spotify</a>
-            </div>
-          </div>
+    <footer style={{
+      borderTop: '1px solid var(--line)',
+      padding: '80px 0 40px',
+      textAlign: 'center',
+      backgroundColor: 'rgba(19, 19, 21, 0.5)',
+    }}>
+      <div className="wrap">
+        {/* Logo */}
+        <div style={{
+          fontSize: '48px',
+          fontFamily: "'Anton', sans-serif",
+          fontWeight: 400,
+          textTransform: 'uppercase',
+          marginBottom: '24px',
+        }}>
+          KΛΣLO
         </div>
-        <div className="border-t border-[var(--line)] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[var(--txt-3)]">
-            &copy; 2026 KAELO. DJ Press Kit & Booking Portal
+
+        {/* Tagline */}
+        <p style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: '12px',
+          textTransform: 'uppercase',
+          letterSpacing: '0.2em',
+          color: 'var(--ash)',
+          marginBottom: '32px',
+        }}>
+          From Sunset to Sunrise
+        </p>
+
+        {/* Socials */}
+        <div style={{
+          display: 'flex',
+          gap: '24px',
+          justifyContent: 'center',
+          marginBottom: '32px',
+          fontFamily: "'Space Mono', monospace",
+          fontSize: '10px',
+          textTransform: 'uppercase',
+        }}>
+          <a href="https://instagram.com/kaelo.ar" target="_blank" style={{ color: 'var(--ash)' }}>
+            Instagram
+          </a>
+          <a href="https://spotify.com" target="_blank" style={{ color: 'var(--ash)' }}>
+            Spotify
+          </a>
+          <a href="https://soundcloud.com" target="_blank" style={{ color: 'var(--ash)' }}>
+            SoundCloud
+          </a>
+          <a href="mailto:kaelo.ar@gmail.com" style={{ color: 'var(--blood)' }}>
+            Bookings
+          </a>
+        </div>
+
+        {/* Credits */}
+        <div style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: '10px',
+          color: 'var(--steel)',
+          borderTop: '1px solid var(--line2)',
+          paddingTop: '24px',
+        }}>
+          <p>© 2024 KAELO — All Rights Reserved</p>
+          <p style={{ marginTop: '8px' }}>
+            Official Press Kit | Managed by <a href="https://abundance.ar" style={{ color: 'var(--blood)' }}>ABUNDANCE</a>
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-[var(--txt-3)] hover:text-[var(--gold-2)] transition">Privacy</a>
-            <a href="#" className="text-[var(--txt-3)] hover:text-[var(--gold-2)] transition">Terms</a>
-          </div>
         </div>
       </div>
     </footer>
