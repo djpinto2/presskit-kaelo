@@ -1,10 +1,12 @@
 'use client';
 
 export default function Reels() {
-  const reels = Array.from({ length: 6 }, (_, i) => ({
-    id: i + 1,
-    title: `Performance ${i + 1}`,
-  }));
+  const reels = [
+    { id: 1, src: '/media/reel-01 (2).mp4', title: 'Performance 01' },
+    { id: 2, src: '/media/reel-02 (2).mp4', title: 'Performance 02' },
+    { id: 3, src: '/media/reel-03 (2).mp4', title: 'Performance 03' },
+    { id: 4, src: '/media/reel-04 (2).mp4', title: 'Performance 04' },
+  ];
 
   return (
     <section id="reels">
@@ -19,7 +21,7 @@ export default function Reels() {
           gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 220px))',
           gap: '18px',
           justifyContent: 'center',
-          maxWidth: '320px',
+          maxWidth: '920px',
           margin: '0 auto',
         }}>
           {reels.map((reel) => (
@@ -28,32 +30,32 @@ export default function Reels() {
               style={{
                 aspectRatio: '9 / 16',
                 backgroundColor: 'var(--panel)',
-                border: '1px solid var(--line)',
-                borderRadius: '4px',
+                borderRadius: '12px',
                 overflow: 'hidden',
+                border: '2px solid var(--line)',
+                position: 'relative',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--blood)';
-                e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = '0 12px 24px rgba(200, 54, 42, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'var(--line)';
-                e.currentTarget.style.transform = 'none';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
+              className="group hover:border-[var(--blood)] hover:shadow-lg hover:-translate-y-1"
             >
+              <video
+                src={reel.src}
+                controls
+                playsInline
+                className="w-full h-full object-cover"
+                style={{ display: 'block' }}
+              />
               <div style={{
-                width: '100%',
-                height: '100%',
-                backgroundColor: 'var(--coal)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                background: 'linear-gradient(to top, rgba(10, 10, 11, 0.9), transparent)',
+                padding: '16px 12px',
+                color: 'var(--txt)',
                 fontSize: '12px',
-                color: 'var(--ash)',
+                fontWeight: '600',
               }}>
                 {reel.title}
               </div>

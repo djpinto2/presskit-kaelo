@@ -28,7 +28,7 @@ export default function Hero() {
           zIndex: 0,
         }}
       >
-        <source src="/path-to-video.mp4" type="video/mp4" />
+        <source src="/media/bg-video (2).mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}

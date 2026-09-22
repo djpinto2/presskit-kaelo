@@ -63,7 +63,7 @@ export default function Bio() {
             e.currentTarget.style.transform = 'rotate(-1.2deg)';
           }}>
             <img
-              src="/img-kaelo.jpg"
+              src="/media/logo.png"
               alt="KAELO"
               style={{
                 width: '100%',
