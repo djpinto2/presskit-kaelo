@@ -12,11 +12,6 @@ export default function Music() {
       url: 'https://soundcloud.com/segundo-pinto-887266750',
       icon: '☁️'
     },
-    { 
-      name: 'Apple Music', 
-      url: 'https://music.apple.com/artist/kaelo',
-      icon: '🎧'
-    },
   ];
 
   return (
@@ -75,7 +70,7 @@ export default function Music() {
           }}>
             <p>
               Escucha mis últimos sets y producciones en tus plataformas favoritas. 
-              Disponible en Spotify, SoundCloud, Apple Music y más.
+              Disponible en Spotify y SoundCloud.
             </p>
           </div>
         </div>

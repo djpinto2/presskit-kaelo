@@ -1,3 +1,5 @@
+import Intro from './components/Intro';
+import BackgroundVideo from './components/BackgroundVideo';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Bio from './components/Bio';
@@ -9,20 +11,24 @@ import Footer from './components/Footer';
 
 export default function Home() {
   return (
-    <main style={{ background: 'var(--black)', color: 'var(--bone)' }}>
-      <Navbar />
-      <Hero />
-      <div className="divider" />
-      <Bio />
-      <div className="divider" />
-      <Music />
-      <div className="divider" />
-      <Reels />
-      <div className="divider" />
-      <Rider />
-      <div className="divider" />
-      <Contact />
-      <Footer />
-    </main>
+    <>
+      <BackgroundVideo />
+      <main style={{ color: 'var(--bone)' }}>
+        <Intro />
+        <Navbar />
+        <Hero />
+        <div className="divider" />
+        <Bio />
+        <div className="divider" />
+        <Music />
+        <div className="divider" />
+        <Reels />
+        <div className="divider" />
+        <Rider />
+        <div className="divider" />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   );
 }

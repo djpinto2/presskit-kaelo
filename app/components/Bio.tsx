@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
+
 export default function Bio() {
   const stats = [
     { num: '13+', label: 'Years behind the decks' },
@@ -7,7 +9,32 @@ export default function Bio() {
     { num: '100%', label: 'Dancefloor focused' },
   ];
 
-  const residencies = ['Moscú', 'Creta', 'Bali', 'Groove'];
+  const residencies = [
+    { name: 'Moscú', note: 'ex Pacha' },
+    { name: 'Creta' },
+    { name: 'Bali' },
+    { name: 'Groove' },
+  ];
+
+  // Los clubes aparecen uno por uno cuando la sección entra en pantalla
+  const residenciesRef = useRef<HTMLDivElement>(null);
+  const [residenciesVisible, setResidenciesVisible] = useState(false);
+
+  useEffect(() => {
+    const el = residenciesRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setResidenciesVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="bio">
@@ -122,41 +149,29 @@ export default function Bio() {
           ))}
         </div>
 
-        {/* Residencies Marquee */}
-        <div style={{
-          overflow: 'hidden',
-          marginTop: '56px',
-        }}>
-          <div style={{
-            display: 'flex',
-            gap: '56px',
-            width: 'max-content',
-            animation: 'scroll 28s linear infinite',
-            paddingRight: '56px',
-          }} className="marquee-track">
-            {/* First set */}
-            {residencies.map((venue, i) => (
-              <div key={i} style={{ whiteSpace: 'nowrap', fontSize: '18px', color: 'var(--ash)' }}>
-                Club residencies: {venue} <span style={{ color: 'var(--blood)' }}>·</span>
-              </div>
+        {/* Club Residencies */}
+        <div
+          ref={residenciesRef}
+          className={`residencies ${residenciesVisible ? 'is-visible' : ''}`}
+        >
+          <h3 className="residencies__title">
+            Club <span className="blood">Residencies</span>
+          </h3>
+          <ul className="residencies__list">
+            {residencies.map((club, i) => (
+              <li
+                key={club.name}
+                className="residencies__item"
+                style={{ transitionDelay: `${0.25 + i * 0.22}s` }}
+              >
+                <span className="residencies__num">0{i + 1}</span>
+                <span className="residencies__name">{club.name}</span>
+                {club.note && <span className="residencies__note">({club.note})</span>}
+              </li>
             ))}
-            {/* Duplicate for seamless loop */}
-            {residencies.map((venue, i) => (
-              <div key={`dup-${i}`} style={{ whiteSpace: 'nowrap', fontSize: '18px', color: 'var(--ash)' }}>
-                {venue} <span style={{ color: 'var(--blood)' }}>·</span>
-              </div>
-            ))}
-          </div>
+          </ul>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes scroll {
-          to {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
     </section>
   );
 }

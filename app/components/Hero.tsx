@@ -10,33 +10,6 @@ export default function Hero() {
       justifyContent: 'center',
       overflow: 'hidden',
     }}>
-      {/* Video Background - Full Screen */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          opacity: 0.9,
-          zIndex: 0,
-        }}
-      >
-        <source src="/media/bg-video (2).mp4" type="video/mp4" />
-      </video>
-
-      {/* Overlay Gradient - More Subtle */}
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'linear-gradient(135deg, rgba(10, 10, 11, 0.4), rgba(10, 10, 11, 0.5), rgba(10, 10, 11, 0.4))',
-        zIndex: 1,
-      }} />
-
       {/* Content */}
       <div style={{
         position: 'relative',
@@ -62,21 +35,13 @@ export default function Hero() {
         </div>
 
         {/* Logo */}
-        <div style={{
-          fontSize: 'clamp(80px, 20vw, 200px)',
-          fontFamily: "'Anton', sans-serif",
-          textTransform: 'uppercase',
-          letterSpacing: '0.02em',
-          fontWeight: 400,
-          lineHeight: 1,
-          background: 'linear-gradient(135deg, var(--bone), var(--blood))',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
-          animation: 'fadeInScale 1s ease-out 0.2s both',
-        }}>
-          KAELO
-        </div>
+        <h1
+          className="hero-logo"
+          style={{ animation: 'fadeInScale 1s ease-out 0.2s both' }}
+        >
+          <img src="/media/logo.svg" alt="KAELO" className="hero-logo__img" />
+          <span className="hero-logo__shine" aria-hidden="true" />
+        </h1>
 
         {/* Tagline */}
         <div style={{
