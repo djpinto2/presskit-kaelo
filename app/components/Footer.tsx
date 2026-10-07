@@ -45,10 +45,10 @@ export default function Footer() {
           <a href="https://instagram.com/kaelo.ar" target="_blank" style={{ color: 'var(--ash)' }}>
             Instagram
           </a>
-          <a href="https://spotify.com" target="_blank" style={{ color: 'var(--ash)' }}>
+          <a href="https://open.spotify.com/artist/3ld4y01CjXQOIUjWVUdBQd" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ash)' }}>
             Spotify
           </a>
-          <a href="https://soundcloud.com" target="_blank" style={{ color: 'var(--ash)' }}>
+          <a href="https://soundcloud.com/segundo-pinto-887266750" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ash)' }}>
             SoundCloud
           </a>
           <a href="mailto:kaelo.ar@gmail.com" style={{ color: 'var(--blood)' }}>
