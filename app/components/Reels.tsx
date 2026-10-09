@@ -43,6 +43,7 @@ export default function Reels() {
                 src={reel.src}
                 controls
                 playsInline
+                preload="metadata"
                 className="w-full h-full object-cover"
                 style={{ display: 'block' }}
               />

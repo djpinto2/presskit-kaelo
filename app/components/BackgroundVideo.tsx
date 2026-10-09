@@ -33,7 +33,7 @@ export default function BackgroundVideo() {
   return (
     <div className="bg-video" aria-hidden="true">
       <video ref={videoRef} autoPlay muted loop playsInline preload="auto" poster="/media/bg-poster.jpg">
-        <source src="/media/bg-video (2).mp4" type="video/mp4" />
+        <source src="/media/bg.mp4" type="video/mp4" />
       </video>
       <div className="bg-video__shade" />
       <div className="bg-video__dim" ref={dimRef} />

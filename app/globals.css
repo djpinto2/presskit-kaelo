@@ -440,6 +440,7 @@ img.grayscale:hover {
     radial-gradient(closest-side at 50% 60%, rgba(200, 54, 42, 0.22), transparent 75%);
   filter: blur(10px);
   animation: logoHalo 4.5s ease-in-out infinite;
+  will-change: transform, opacity;
   pointer-events: none;
 }
 
@@ -447,7 +448,10 @@ img.grayscale:hover {
   display: block;
   width: 100%;
   height: 100%;
-  animation: logoGlow 4.5s ease-in-out infinite;
+  filter:
+    drop-shadow(0 0 2px rgba(255, 255, 255, 0.7))
+    drop-shadow(0 0 14px rgba(236, 231, 223, 0.35))
+    drop-shadow(0 0 38px rgba(200, 54, 42, 0.42));
 }
 
 /* Destello que recorre el logo */
@@ -457,25 +461,20 @@ img.grayscale:hover {
   pointer-events: none;
   -webkit-mask: url('/media/logo.svg') center / contain no-repeat;
   mask: url('/media/logo.svg') center / contain no-repeat;
-  background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 214, 200, 0.6) 54%, transparent 64%);
-  background-size: 260% 100%;
-  background-repeat: no-repeat;
-  animation: logoShine 6s cubic-bezier(0.6, 0, 0.3, 1) 1.2s infinite;
+  overflow: hidden;
 }
 
-@keyframes logoGlow {
-  0%, 100% {
-    filter:
-      drop-shadow(0 0 2px rgba(255, 255, 255, 0.55))
-      drop-shadow(0 0 12px rgba(236, 231, 223, 0.28))
-      drop-shadow(0 0 30px rgba(200, 54, 42, 0.3));
-  }
-  50% {
-    filter:
-      drop-shadow(0 0 3px rgba(255, 255, 255, 0.85))
-      drop-shadow(0 0 18px rgba(236, 231, 223, 0.45))
-      drop-shadow(0 0 48px rgba(200, 54, 42, 0.55));
-  }
+.hero-logo__shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 260%;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 214, 200, 0.6) 54%, transparent 64%);
+  transform: translateX(-80%);
+  animation: logoShine 6s cubic-bezier(0.6, 0, 0.3, 1) 1.2s infinite;
+  will-change: transform;
 }
 
 @keyframes logoHalo {
@@ -484,8 +483,8 @@ img.grayscale:hover {
 }
 
 @keyframes logoShine {
-  0% { background-position: 130% 0; }
-  45%, 100% { background-position: -30% 0; }
+  0% { transform: translateX(-80%); }
+  45%, 100% { transform: translateX(18.5%); }
 }
 
 /* ───────────── Intro ───────────── */
@@ -768,9 +767,11 @@ img.grayscale:hover {
 .intro__eq i {
   display: block;
   width: 2px;
-  height: 3px;
+  height: 12px;
   background: currentColor;
-  transition: height 0.3s ease;
+  transform: scaleY(0.25);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
 }
 
 .intro__sound.is-on .intro__eq i {
@@ -809,13 +810,18 @@ img.grayscale:hover {
 }
 
 @keyframes introEq {
-  from { height: 3px; }
-  to { height: 12px; }
+  from { transform: scaleY(0.25); }
+  to { transform: scaleY(1); }
 }
 
 @media (max-width: 600px) {
   .intro__corner {
     display: none;
+  }
+
+  .residencies__item {
+    backdrop-filter: none;
+    background: rgba(22, 22, 23, 0.82);
   }
 
   .intro__sound {

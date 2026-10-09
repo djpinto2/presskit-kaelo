@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useAutoplay } from './useAutoplay';
 
-const VIDEO_SRC = '/media/bg-video (2).mp4';
-const AUDIO_SRC = '/media/intro-audio.m4a';
+const VIDEO_SRC = '/media/bg.mp4';
+const AUDIO_SRC = '/media/intro.m4a';
 const LOGO_SRC = '/media/logo.svg';
 
 const MIN_LOADING_MS = 3200; // duración mínima de la barra de carga
