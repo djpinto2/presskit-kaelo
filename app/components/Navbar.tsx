@@ -19,7 +19,7 @@ export default function Navbar() {
       <a href="#top" style={{
         fontSize: 'clamp(18px, 4vw, 24px)',
         fontWeight: 700,
-        fontFamily: "'Anton', sans-serif",
+        fontFamily: "var(--font-anton), sans-serif",
         textTransform: 'uppercase',
         letterSpacing: '0.02em',
       }}>
@@ -31,7 +31,7 @@ export default function Navbar() {
         display: 'flex',
         listStyle: 'none',
         gap: '32px',
-        fontFamily: "'Space Mono', monospace",
+        fontFamily: "var(--font-space-mono), monospace",
         fontSize: '11px',
         textTransform: 'uppercase',
         letterSpacing: '0.42em',

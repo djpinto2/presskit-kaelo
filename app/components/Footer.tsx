@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Logo */}
         <div style={{
           fontSize: '48px',
-          fontFamily: "'Anton', sans-serif",
+          fontFamily: "var(--font-anton), sans-serif",
           fontWeight: 400,
           textTransform: 'uppercase',
           marginBottom: '24px',
@@ -22,7 +22,7 @@ export default function Footer() {
 
         {/* Tagline */}
         <p style={{
-          fontFamily: "'Space Mono', monospace",
+          fontFamily: "var(--font-space-mono), monospace",
           fontSize: '12px',
           textTransform: 'uppercase',
           letterSpacing: '0.2em',
@@ -38,7 +38,7 @@ export default function Footer() {
           gap: '24px',
           justifyContent: 'center',
           marginBottom: '32px',
-          fontFamily: "'Space Mono', monospace",
+          fontFamily: "var(--font-space-mono), monospace",
           fontSize: '10px',
           textTransform: 'uppercase',
         }}>
@@ -58,7 +58,7 @@ export default function Footer() {
 
         {/* Credits */}
         <div style={{
-          fontFamily: "'Space Mono', monospace",
+          fontFamily: "var(--font-space-mono), monospace",
           fontSize: '10px',
           color: 'var(--steel)',
           borderTop: '1px solid var(--line2)',

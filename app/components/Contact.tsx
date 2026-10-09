@@ -16,7 +16,7 @@ export default function Contact() {
           fontSize: '18px',
           color: 'var(--ash)',
           marginBottom: '48px',
-          fontFamily: "'Space Mono', monospace",
+          fontFamily: "var(--font-space-mono), monospace",
           textTransform: 'uppercase',
           letterSpacing: '0.2em',
         }}>
@@ -27,7 +27,7 @@ export default function Contact() {
           href="mailto:kaelo.ar@gmail.com"
           style={{
             fontSize: 'clamp(36px, 8vw, 64px)',
-            fontFamily: "'Anton', sans-serif",
+            fontFamily: "var(--font-anton), sans-serif",
             fontWeight: 400,
             textTransform: 'uppercase',
             textDecoration: 'underline',
@@ -51,7 +51,7 @@ export default function Contact() {
           gap: '32px',
           justifyContent: 'center',
           marginTop: '56px',
-          fontFamily: "'Space Mono', monospace",
+          fontFamily: "var(--font-space-mono), monospace",
           fontSize: '11px',
           textTransform: 'uppercase',
           letterSpacing: '0.2em',

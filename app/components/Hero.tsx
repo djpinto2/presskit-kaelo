@@ -24,7 +24,7 @@ export default function Hero() {
       }}>
         {/* Eyebrow */}
         <div style={{
-          fontFamily: "'Space Mono', monospace",
+          fontFamily: "var(--font-space-mono), monospace",
           fontSize: '12px',
           textTransform: 'uppercase',
           letterSpacing: '0.42em',
@@ -45,7 +45,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <div style={{
-          fontFamily: "'Space Mono', monospace",
+          fontFamily: "var(--font-space-mono), monospace",
           fontSize: '14px',
           textTransform: 'uppercase',
           letterSpacing: '0.42em',
@@ -85,7 +85,7 @@ export default function Hero() {
                 padding: '8px 16px',
                 border: '2px solid var(--blood)',
                 color: 'var(--blood)',
-                fontFamily: "'Space Mono', monospace",
+                fontFamily: "var(--font-space-mono), monospace",
                 textTransform: 'uppercase',
                 letterSpacing: '0.2em',
                 transition: 'all 0.3s ease',
@@ -122,7 +122,7 @@ export default function Hero() {
               background: 'var(--blood)',
               color: 'var(--bone)',
               padding: '14px 28px',
-              fontFamily: "'Space Mono', monospace",
+              fontFamily: "var(--font-space-mono), monospace",
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.42em',
@@ -143,7 +143,7 @@ export default function Hero() {
               color: 'var(--bone)',
               border: '2px solid var(--bone)',
               padding: '14px 28px',
-              fontFamily: "'Space Mono', monospace",
+              fontFamily: "var(--font-space-mono), monospace",
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.42em',
@@ -174,7 +174,7 @@ export default function Hero() {
           display: 'flex',
           gap: '24px',
           marginTop: '32px',
-          fontFamily: "'Space Mono', monospace",
+          fontFamily: "var(--font-space-mono), monospace",
           fontSize: '11px',
           textTransform: 'uppercase',
           animation: 'fadeInUp 0.8s ease-out 0.7s both',
@@ -198,7 +198,7 @@ export default function Hero() {
         gap: '8px',
       }}>
         <p style={{
-          fontFamily: "'Space Mono', monospace",
+          fontFamily: "var(--font-space-mono), monospace",
           fontSize: '10px',
           textTransform: 'uppercase',
           letterSpacing: '0.42em',

@@ -129,7 +129,7 @@ export default function Bio() {
             >
               <div style={{
                 fontSize: 'clamp(48px, 7vw, 90px)',
-                fontFamily: "'Anton', sans-serif",
+                fontFamily: "var(--font-anton), sans-serif",
                 fontWeight: 400,
                 lineHeight: 1,
                 marginBottom: '8px',
@@ -138,7 +138,7 @@ export default function Bio() {
               </div>
               <div style={{
                 fontSize: '12px',
-                fontFamily: "'Space Mono', monospace",
+                fontFamily: "var(--font-space-mono), monospace",
                 textTransform: 'uppercase',
                 letterSpacing: '0.2em',
                 color: 'var(--ash)',

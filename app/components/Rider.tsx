@@ -43,7 +43,7 @@ export default function Rider() {
             >
               <div style={{
                 fontSize: '12px',
-                fontFamily: "'Space Mono', monospace",
+                fontFamily: "var(--font-space-mono), monospace",
                 textTransform: 'uppercase',
                 letterSpacing: '0.2em',
                 color: 'var(--blood)',
@@ -53,7 +53,7 @@ export default function Rider() {
               </div>
               <div style={{
                 fontSize: '16px',
-                fontFamily: "'Oswald', sans-serif",
+                fontFamily: "var(--font-oswald), sans-serif",
                 fontWeight: 600,
                 color: 'var(--bone)',
                 marginBottom: '8px',
