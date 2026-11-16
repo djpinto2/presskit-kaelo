@@ -182,6 +182,7 @@ export default function Hero() {
           <a href="https://instagram.com/kaelo.ar" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--bone)', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--blood)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--bone)'}>Instagram</a>
           <a href="https://open.spotify.com/intl-es/artist/3ld4y01CjXQOIUjWVUdBQd" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--bone)', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--blood)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--bone)'}>Spotify</a>
           <a href="https://soundcloud.com/segundo-pinto-887266750" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--bone)', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--blood)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--bone)'}>SoundCloud</a>
+          <a href="https://www.youtube.com/@KAELO-AR" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--bone)', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--blood)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--bone)'}>YouTube</a>
         </div>
       </div>
 

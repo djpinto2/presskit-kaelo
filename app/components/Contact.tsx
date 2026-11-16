@@ -65,6 +65,9 @@ export default function Contact() {
           <a href="https://soundcloud.com/segundo-pinto-887266750" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ash)' }}>
             SoundCloud
           </a>
+          <a href="https://www.youtube.com/@KAELO-AR" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ash)' }}>
+            YouTube
+          </a>
         </div>
       </div>
     </section>
